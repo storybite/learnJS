@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>html 문서구조의 이해</title>
+    <meta charset="utf-8">
+    <meta name="description" content="html 문서구조의 이해"> <!-- 검색엔진이 요약 정보를 출력할 때 참조 -->
+    <meta name="keywords" content="html,문서구조,이해"> <!-- 검색엔진이 검색 키워드를 정할 때 참조 -->
+    <meta name="author" content="bigblogger">
+    <!-- <meta http-equiv="refresh" content="10"> --> <!-- 10초에 한 번씩 refresh -->
+    <style>
+      h2,p,ul,ol{
+        border: 1px solid grey;
+      }
+      p,br{
+        border: 1px solid grey;
+      }
+      table {
+        border: 2px solid grey;
+        border-collapse: collapse;
+      }
+      th,td {
+        border: 1px solid grey;
+      }
+      form {
+        background-color: rgb(241, 235, 232);
+      }
+      label {
+        border: 1px solid navy;
+      }
+      input {
+        border: 1px solid maroon;
+      }
+      li {
+        border: 1px solid rgb(114, 22, 22);
+      }
+
+    </style>
+  </head>
+<!-- 
+  body {
+    display: block;
+    margin: 8px;
+  }
+   -->
+  <body>
+    <!-- h2 : margin 위아래 19.920 -->
+    <h2>Structure of 
+      <a href="https://opentutorials.org/course/2039"  target="_blank">
+        html documents learned</a> 
+      at
+      <a href="https://opentutorials.org/course/2039">
+        open tutorials</a>
+    </h2>
+    <!-- p : margin 위아래 16 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorum, dignissimos corrupti temporibus repellat, alias nisi asperiores deserunt ratione tempore distinctio. Expedita exercitationem quidem non nobis, quae error quibusdam porro.</p>
+    
+    <p>unordered list</p>
+
+    <!-- margin 위아래 16, padding 좌우 40 -->  
+    <ul>
+      <li>첫째</li>
+      <li>둘째</li>
+    </ul>
+
+    <p>ordered list</p>
+    <ol>
+        <li>하나</li>
+        <li>둘</li>
+        <li>셋</li>
+    </ol>     
+
+    <!-- <table border="1"> -->
+      <table>
+        <thead>
+          <tr>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>역사</td>
+            <td rowspan="2">물리</td>
+          </tr>
+          <tr>
+            <td>국어</td>
+            <td colspan="2" style="text-align:center">영어</td>
+            <!-- <td>수학</td> -->
+            <td>역사</td>
+            <!-- <td>물리</td> -->
+          </tr>
+        <tfoot>
+          <tr>
+            <th>100</th>
+            <td>200</td>
+            <td>300</td>
+            <td>400</td>
+            <td>500</td>
+          </tr>
+        </tfoot>
+      </tbody>
+    </table>    
+    
+    <form action="login.jsp">
+      <label for="job">직업:</label>
+      <!-- input type text 위아래 padding 1px -->
+      <input type="text" id="job", name="job", value="12345" title="tool tip...">
+      <br>
+      <label for="red">붉은색:</label>
+      <!-- input type radio 좌우 margin 5,3px, 위아래 margin 3,0 px -->
+      <input type="radio", id="red", name="color", value="r"   checked >
+      <label for="blue">푸른색:</label>
+      <input type="radio", id="green", name="color", value="g">
+      <label for="green">초록색:</label>
+      <input type="radio", id="blue", name="color", value="b">      
+      <br>
+      <label for="first">1등:</label>
+      <!-- input type checkbox 좌우 margin 4,3px, 위아래 margin 3,3 px -->
+      <input type="checkbox", id="first", name="grade", value="1" >
+      <label for="second">2등:</label>
+      <input type="checkbox", id="second", name="grade", value="2" >
+      <label for="third">3등:</label>
+      <input type="checkbox", id="third", name="grade", value="3" checked>
+      <input type="hidden", id="hidden" name="hidden", value="hiddenValue">
+      <br>
+      <label for="device">기기:</label>
+      <select id="device", name="device">
+        <option value="c">computer</option>
+        <option value="t">tablet</option>
+        <option value="m">mobile</option>
+      </select>
+      <br>
+      <label for="animal">multiple:</label>
+      <br>
+      <select id="animal", name="animal" multiple>
+        <option value="t">tiger</option>
+        <option value="l" selected>lion</option>
+        <option value="d">dog</option>
+      </select>
+      <br>
+      <!-- input type button/submit 좌우 margin 6,6px, 위아래 1,1px -->
+      <input type="button" value="클릭 이벤트", onclick="alert('button입니다.')">
+      <input type="submit">        
+    </form>    
+  </body>
+</html>
+
